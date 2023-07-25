@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MyFirstcollections/static/css/main.07eedc18.css",
+    "main.js": "/MyFirstcollections/static/js/main.3389ac7e.js",
+    "index.html": "/MyFirstcollections/index.html",
+    "main.07eedc18.css.map": "/MyFirstcollections/static/css/main.07eedc18.css.map",
+    "main.3389ac7e.js.map": "/MyFirstcollections/static/js/main.3389ac7e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07eedc18.css",
+    "static/js/main.3389ac7e.js"
+  ]
+}
