@@ -3,15 +3,18 @@ import "./index.scss";
 import { Collection } from "./Collection";
 import { useState, useEffect } from "react";
 
-const cats = [
+const cats =
+  // не зрозуміла назва масиву
+  [
   { name: "Всі" },
   { name: "Море" },
   { name: "Гори" },
   { name: "Архітектура" },
   { name: "Міста" },
 ];
-
+//  винести краще в окрему папку mock-data
 function App() {
+// зробити окремий компонент Collections і сюди його імпортнути
   const [categoryId, setCategoryId] = useState(0);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +36,8 @@ function App() {
         alert("Помилка при передачі данних");
       })
       .finally(() => setIsLoading(false));
+    // запити краще писати окремою функцією і викликати її в useEffect. 
+    // fetch стара практика, axios краще і простіше
   }, [categoryId,page]);
 
   return (
@@ -40,7 +45,9 @@ function App() {
       <h1>Моя колекція фотографій</h1>
       <div className="top">
         <ul className="tags">
-          {cats.map((obj, i) => (
+          {cats.map((obj, i) 
+            // елемент ітерації це item, it, element, el
+            => (
             <li
               onClick={() => setCategoryId(i)}
               className={categoryId === i ? "active" : ""}
@@ -68,6 +75,7 @@ function App() {
             .map((obj, index) => (
               <Collection key={index} name={obj.name} images={obj.photos} />
             ))
+// фільтрацію колекції можна зробити через функцію з useCalback яка буде відпрацьовувати на зміну searchValue
         )}
       </div>
       <ul className="pagination">
